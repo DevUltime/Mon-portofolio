@@ -1,0 +1,573 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --couleurfond: #023535;
+    --couleurprincipale: #0caba8;
+    --couleursecondaire: #008f8c;
+    --policeprincipale: 'Poppins';
+    --policesecondaire: 'Sans serif';
+    --rayonbordure: 10px;
+}
+body{
+    font-family: var(--policeprincipale),var(--policesecondaire);
+    overflow-x: hidden;
+    background-color: var(--couleurfond);
+    color: #fff;
+    width: 100%;
+}
+a{
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+
+}
+a::after{
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    border-radius: var(--rayonbordure);
+    width: 0;
+    background-color: var(--couleurprincipale);
+    transition: .3s;
+}
+a:hover::after{
+    width: 100%;
+}
+button{
+    cursor: pointer;
+    transition: .3s;
+}
+button:hover{
+    translate: 0 -2px;
+    box-shadow: 0 3px 7px #0caba880;
+}
+header{
+    padding: 1.3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+header nav ul{
+    list-style: none;
+    display: flex;
+}
+header nav ul li{
+    text-transform: capitalize;
+    font-size: .8rem;
+    color: #fff;
+    padding: 10px 15px;
+}
+header h2 span{
+    color: var(--couleurprincipale);
+}
+.pagePrincipale{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    justify-content: space-between;
+    background-image: linear-gradient( 0deg, rgba(0, 0, 0, .5), transparent 50% ), url(imageIllustration.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    padding: 5%;
+    width: 100%;
+}
+.pagePrincipale div{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-top: -10rem;
+    height: 100%;
+}
+.pagePrincipale div:nth-child(1) h1{
+    display: inline;
+    font-size: 1.5rem;
+    position: relative;
+    width: min-content;
+}
+.pagePrincipale div:nth-child(1) h1::before{
+    position: absolute;
+    content: '';
+    height: 2px;
+    border-radius: var(--rayonbordure);
+    width: 100%;
+    top: -5px;
+    left: 0;
+    background-color: var(--couleurprincipale);
+}
+.pagePrincipale div:nth-child(2){
+    text-align: center;
+    padding-bottom: 3rem;
+    align-items: end;
+    font-size: 4rem;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    animation: rebontAnimation 7s linear infinite;
+}
+.pagePrincipale div:nth-child(2) span{
+    color: var(--couleurprincipale);
+}
+
+@keyframes rebontAnimation {
+    50%{
+        scale: 1.09;
+    }
+}
+
+
+.pagePrincipale div:nth-child(3){
+    font-size: .9rem;
+}
+.pagePrincipale div:nth-child(3) span:first-child{
+    color: #fff;
+    display: block;
+    font-size: 1.3rem; 
+}
+.pagePrincipale div:nth-child(3) span{
+    color: var(--couleurprincipale);
+    font-weight: bolder;
+}
+.icones{
+    opacity: .5;
+    position: absolute;
+    bottom: 3rem;
+    display: flex;
+    width: 100%;
+    height: 20px;
+    justify-content: center;
+    gap: 2.5rem;
+}
+.projets{
+    margin: 2rem auto 0 auto;
+    width: 90%;
+}
+.bar-projets{
+    display: flex;
+    align-items: center;
+}
+.projets p{
+    margin-right: 2px;
+    font-size: .7rem;
+    text-transform: capitalize;
+    width: max-content;
+    white-space: nowrap;
+} 
+.bar-projets hr{
+    width: 80%;
+    opacity: .5;
+}
+.mesprojets{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1rem;
+    margin-top: 1.2rem;
+}
+.mesprojets div{
+    background-color: #008f8d23;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 10px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 5px 10px  #00000028;
+    transition: .3s;
+    width: 200px;
+}
+.mesprojets div:hover{
+    translate: 0 -5px;
+}
+.mesprojets div img{
+    background-color: var(--couleursecondaire);
+    border-radius: 10px;
+    height: 50%;
+    width: 100%;
+    object-fit: cover;
+}
+.mesprojets div button{
+    display: flex;
+    align-items: center;
+    padding: .4rem .5rem;
+    border-radius: 100px;
+    background-color: var(--couleurprincipale);
+    border: none;
+    color: #fff;
+    margin-top: 1rem;
+    justify-content: center;
+}
+.mesprojets div h3{
+    font-size: .9rem;
+}
+.competences{
+    margin: 2rem auto 0 auto;
+    width: 90%;
+}
+.bar-competences{
+    display: flex;
+    align-items: center;
+}
+.competences p{
+    margin-right: 2px;
+    font-size: .7rem;
+    text-transform: capitalize;
+    width: max-content;
+    white-space: nowrap;
+} 
+.competences hr{
+    width: 95%;
+    opacity: .5;
+}
+.mescompetences{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: .7rem;
+}
+.mescompetences > div{
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 3px 10px #00000079;
+    padding: 10px 15px;
+    height: 60px;
+    border-radius: 100px;
+    gap: 5px;
+    width: 175px;
+    transition: .3s;
+}
+.mescompetences > div:hover{
+    translate: 0 -5px;
+}
+.mescompetences > div h3{
+    height: 30px;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: .8rem;
+}
+.mescompetences > div h3 img{
+    width: 30px;
+    height: 100%;
+    object-fit: contain;
+}
+.mescompetences div .progress-bar{
+    margin:  0 auto;
+    width: 75%;
+    height: 5px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+.mescompetences div:nth-child(1) .progress-bar div{
+    height: 100%;
+    width: 85%;
+    border-radius: 10px;
+    background-color: orange;
+}
+.mescompetences div:nth-child(1) .progress-bar{
+    background-color: rgba(255, 166, 0, 0.5);
+}
+.mescompetences div:nth-child(1) .progress-bar::after{
+    content: '85%';
+    font-size: .6rem;
+    position: absolute;
+    right: 10px;
+}
+.mescompetences div:nth-child(2) .progress-bar div{
+    height: 100%;
+    width: 90%;
+    border-radius: 10px;
+    background-color: greenyellow;
+}
+.mescompetences div:nth-child(2) .progress-bar{
+    background-color: rgba(172, 255, 47, 0.5);
+}
+.mescompetences div:nth-child(2) .progress-bar::after{
+    content: '90%';
+    font-size: .6rem;
+    position: absolute;
+    right: 10px;
+}
+.mescompetences div:nth-child(3) .progress-bar div{
+    height: 100%;
+    width: 70%;
+    border-radius: 10px;
+    background-color: rgb(255, 77, 0);
+}
+.mescompetences div:nth-child(3) .progress-bar{
+    background-color: rgba(255, 77, 0, 0.5);
+}
+.mescompetences div:nth-child(3) .progress-bar::after{
+    content: '70%';
+    font-size: .6rem;
+    position: absolute;
+    right: 10px;
+}
+.mescompetences div:nth-child(4) .progress-bar div{
+    height: 100%;
+    width: 75%;
+    border-radius: 10px;
+    background-color: yellow;
+}
+.mescompetences div:nth-child(4) .progress-bar{
+    background-color: rgba(255, 255, 0, 0.5);
+}
+.mescompetences div:nth-child(4) .progress-bar::after{
+    content: '75%';
+    font-size: .6rem;
+    position: absolute;
+    right: 10px;
+}
+.contact{
+    width: 90%;
+    margin: 3rem  auto 0 auto;
+}
+.bar-contact{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.contact  p{
+    margin-right: 2px;
+    font-size: .7rem;
+    white-space: nowrap;
+} 
+.bar-contact hr{
+    width: 80%;
+    opacity: .5;
+}
+.infos-mesinfos{
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    display: flex;
+    gap: .7rem;
+    justify-content: space-around;
+}
+.infos-mesinfos hr{
+    opacity: .5;
+}
+.informations form{
+    display: grid;
+    gap: .5rem;
+    padding: 20px;
+    border-radius: 10px;
+}
+#zoneText{
+    border: none;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px 10px #00000028;
+    appearance: none;
+    resize: none;
+    height: 100px;
+    grid-column: span 2;
+    padding: 10px;
+    border-radius: 6px;
+    color: #b7b7b7;
+}
+#zoneText::placeholder{
+    color: #a8a8a8;
+    font-size: .6rem;
+}
+#zoneText:focus{
+    outline: .5px solid var(--couleurprincipale);
+}
+.informations input{
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px 10px #00000028;
+    padding: 10px;
+    height: 2rem;
+    border-radius: 100px;
+    appearance: none;
+    border: none;
+    color: #b7b7b7;
+}
+.informations input:focus{
+    outline: .5px solid var(--couleurprincipale);
+}
+.informations input::placeholder{
+    color: #b7b7b7;
+    font-size: .6rem;
+}
+.informations input[type = 'submit']{
+    margin-top: 1rem;
+    width: max-content;
+    padding: 5px 15px;
+    background-color: var(--couleurprincipale);
+    color: #fff;
+    font-weight: bold;
+}
+.informations input[type = 'reset']{
+    margin-top: 1rem;
+    width: max-content;
+    padding: 5px 15px;
+    background-color: rgb(224, 19, 87);
+    color: #fff;
+    font-weight: bold;
+}
+.informations .btn-sub-rst{
+
+    display: flex;
+    justify-content: space-between;
+    grid-column: span 2;
+}
+
+.mesinformations{
+    display: flex;
+    flex-direction: column;
+    justify-content:center ;
+}
+.mesinformations p{
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+.mesinformations p span{
+    padding: 6px;
+}
+footer{
+    margin-top: 1rem;
+    font-size: .8rem;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(0deg,#00000063, transparent 90%);
+    width: 100%;
+}
+@media screen and (max-width: 810px) {
+    header nav{
+        position: absolute;
+        top: 42px;
+        right: 10px;
+        background-color: rgb(64, 32, 32);
+        backdrop-filter: blur(50px);
+        background-color: #008f8d56;
+        border-radius: 10px;
+        display: none;
+        transition: .2s;
+
+    }
+    header nav ul{
+        display: flex;
+        flex-direction: column;
+    }
+    header nav ul li:first-child{
+        border-radius: 10px 10px 0 0;
+        background-color: rgba(255, 255, 255, 0.2);
+    
+    }
+    header nav ul li:nth-child(2){
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    header nav ul li:nth-child(3){
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    header nav ul li:last-child{
+        border-radius: 0 0 10px 10px;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    header .menu-hamburger{
+        right: 10px;
+        top: 20px;
+        position: absolute;
+        height: 18px;
+        width: 25px;
+    }
+    .navBar{
+        transition: .2s;
+        display: flex;
+    }
+    .menuHamburger{
+        height: 37.5px;
+    }
+    .first-bar{
+        height: 2px;
+        width: 100%;
+        border-radius: 10px;
+        background-color: var(--couleurprincipale);
+        box-shadow: 0 8px var(--couleurprincipale);
+        transition: .2s;
+    }
+    .second-bar{
+        margin-top: 14px;
+        height: 2px;
+        width: 100%;
+        border-radius: 10px;
+        background-color: var(--couleurprincipale);
+        transition: .2s;
+    }
+    .firstBar{
+        background-color: rgb(255, 0, 76);
+        box-shadow: none;
+        transition: .2s;
+        margin-top: 7px;
+        rotate: 45deg;
+    }
+    .secondBar{
+        background-color: rgb(255, 0, 76);
+        margin-top: -2px;
+        transition: .2s;
+        rotate: -45deg;
+    }
+    .pagePrincipale{
+        display: flex;
+        flex-direction: column;
+        background: none;
+        justify-content: center;
+        gap: 5rem;
+    }
+    .pagePrincipale div{
+        height: min-content;
+        justify-content: center;
+        align-items: center;
+        margin-top: -5rem;
+    }
+    .pagePrincipale div:nth-child(3){
+        margin-top: -3rem;
+        grid-row: 2/2;
+    }
+    .pagePrincipale div:nth-child(2){
+        display: none;
+    }
+    .icones{
+        display: none;
+    }
+    .infos-mesinfos > hr{
+        display: none;
+    }
+}
+@media  screen and (max-width: 480px) {
+        .mesprojets div,.mescompetences > div,.infos-mesinfos{
+        width: 90%;
+    }
+    .infos-mesinfos > hr{
+        display: none;
+    }
+    .infos-mesinfos{
+        display: block;
+        width: 100%;
+    }
+    .infos-mesinfos form{
+        display: flex;
+        flex-direction: column;
+    }
+    .mesinformations{
+        width: max-content;
+        margin-left: 5%;
+    }
+}
